@@ -71,12 +71,15 @@ public class BlogServicesTest {
      * @return
      * @throws SQLException 
      */
-    /*
+
+    //FALTA PRUEBAS
+
     private Connection getConnection() throws SQLException{
         return DriverManager.getConnection("jdbc:h2:file:./target/db/testdb;MODE=MYSQL", "anonymous", "anonymous");
     }
-    */
-    
+
+	//FALTA PRUEBAS
+	/*
     @Test
     public void pruebaCeroTest() throws SQLException, ServicesException {
         //Insertar datos en la base de datos de pruebas, de acuerdo con la clase
@@ -108,6 +111,8 @@ public class BlogServicesTest {
     			}
     			
     	    });
+
+
     	
 
 
@@ -124,7 +129,6 @@ public class BlogServicesTest {
         //assert ...
         // Assert.fail("Pruebas no implementadas aun...");
         
-    }    
-    
-
+    }
+	*/
 }

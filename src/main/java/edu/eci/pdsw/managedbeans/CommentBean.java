@@ -7,7 +7,6 @@ import edu.eci.pdsw.services.ServicesException;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import java.util.List;
 
