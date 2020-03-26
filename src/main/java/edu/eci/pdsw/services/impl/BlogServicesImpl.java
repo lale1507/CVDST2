@@ -13,9 +13,11 @@ import edu.eci.pdsw.entities.User;
 import edu.eci.pdsw.persistence.BlogDAO;
 import edu.eci.pdsw.persistence.PersistenceException;
 import edu.eci.pdsw.persistence.UserDAO;
+import edu.eci.pdsw.persistence.CommentsDao;
 import edu.eci.pdsw.services.ServicesException;
 import edu.eci.pdsw.services.BlogServices;
 import java.util.List;
+
 
 /**
  *
@@ -38,6 +40,9 @@ public class BlogServicesImpl implements BlogServices {
 	
 	@Inject
 	private UserDAO userDAO;
+
+	@Inject
+	private CommentsDao commentDao;
 
     @Override
 	public List<User> listUsers() throws ServicesException {
@@ -64,7 +69,11 @@ public class BlogServicesImpl implements BlogServices {
 
 	@Override
 	public List<Comment> searchCommentsByBlogTitle(String title) throws ServicesException {
-		throw new UnsupportedOperationException("Not supported yet.");
+		try {
+			return commentDao.loadAll(title);
+		} catch (PersistenceException ex) {
+			throw  new ServicesException("Error de busqueda");
+		}
 	}
 
 	@Override

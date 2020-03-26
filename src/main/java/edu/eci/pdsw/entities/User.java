@@ -12,6 +12,10 @@ public class User {
 		this.lastName = lastName;
 	}
 
+	public User(){
+
+	}
+
 	public String getLogin() {
 		return login;
 	}

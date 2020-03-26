@@ -4,6 +4,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import edu.eci.pdsw.persistence.CommentsDao;
+import edu.eci.pdsw.persistence.mybatisimpl.MyBatisCommentsDao;
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
 
@@ -41,6 +43,7 @@ public class GuiceContextListener implements ServletContextListener {
                 bind(BlogDAO.class).to(MyBatisBlogDAO.class);
 				// Users
                 bind(UserDAO.class).to(MyBatisUserDAO.class);
+                bind(CommentsDao.class).to(MyBatisCommentsDao.class);
 			}
 		}
 
