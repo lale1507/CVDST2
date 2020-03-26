@@ -1,7 +1,7 @@
 ## Escuela Colombiana de Ingeniería
 
 ### PDSW – Procesos de desarrollo de Software
-### Parcial Segundo Tercio
+### Parcial Segundo Tercio - Laura Bernal
 
 
 **IMPORTANTE**
