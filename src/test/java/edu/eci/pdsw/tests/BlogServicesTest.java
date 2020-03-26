@@ -17,6 +17,7 @@
 package edu.eci.pdsw.tests;
 
 import edu.eci.pdsw.entities.User;
+import edu.eci.pdsw.entities.Comment;
 import edu.eci.pdsw.services.BlogServices;
 import edu.eci.pdsw.services.BlogServicesFactory;
 import edu.eci.pdsw.services.ServicesException;
@@ -73,10 +74,10 @@ public class BlogServicesTest {
      */
 
     //FALTA PRUEBAS
-
+    /*
     private Connection getConnection() throws SQLException{
         return DriverManager.getConnection("jdbc:h2:file:./target/db/testdb;MODE=MYSQL", "anonymous", "anonymous");
-    }
+    }*/
 
 	//FALTA PRUEBAS
 	/*
@@ -131,4 +132,19 @@ public class BlogServicesTest {
         
     }
 	*/
+    @Test
+    public void pruebaComentarioTest(){
+
+        List<Comment> comentarios;
+        try {
+            comentarios = blogServices.searchCommentsByBlogTitle("prueba");
+            String comparar="Prueba Comentario";
+            //System.out.println(comentarios.get(0));
+            Assert.assertEquals(comentarios.get(0), comparar);
+
+        } catch (ServicesException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
